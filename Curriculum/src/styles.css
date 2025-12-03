@@ -1,0 +1,346 @@
+/* --- VARIABLES DE COLOR (MODERNO/MINIMALISTA CON TONOS GRISES SUAVES) --- */
+:root {
+    --primary-color: #2c3e50; /* Gris Azulado Oscuro (Elegante) */
+    --accent-color: #1abc9c; /* Verde Azulado (Contraste Brillante) */
+    --accent-dark: #16a085;
+    --text-color: #333333; 
+    --text-muted: #7f8c8d; /* Gris Frío */
+    
+    /* MODIFICACIONES CLAVE PARA REDUCIR EL BRILLO */
+    --bg-main: #f5f5f5; /* Fondo principal de la página (Suave) */
+    --bg-light: #e5e8e8; /* Gris Claro Suave (Fondo de secciones .bg-light) */
+    --bg-header-hero: #eceff1; /* NUEVO: Gris muy claro, pero no blanco puro, para Hero y Header. */
+
+    --bg-light-contrast: #ffffff; /* Mantenemos el blanco puro solo para cajas interiores (Formulario) */
+    
+    --bg-dark-footer: #2c3e50; 
+    --shadow-subtle: 0 4px 12px rgba(0, 0, 0, 0.06); 
+}
+
+/* --- TIPOGRAFÍA (Montserrat + Roboto) --- */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@300;400;500&display=swap');
+
+/* RESET BÁSICO */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif; 
+    line-height: 1.6; 
+    color: var(--text-color);
+    background-color: var(--bg-main) !important;
+}
+
+/* --- ESTILOS GENERALES Y ARQUITECTURA --- */
+
+.section {
+    max-width: 1000px; 
+    margin: 0 auto;
+    padding: 80px 5%; 
+    opacity: 0; 
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out; 
+}
+
+.bg-light {
+    background-color: var(--bg-light) !important; 
+}
+
+h1, h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+h3, h4 {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Encabezado de Sección Minimalista (solo una línea fina) */
+h2.section-title {
+    position: relative;
+    padding-bottom: 20px;
+    margin-bottom: 60px !important;
+    font-size: 2.2em !important; 
+    text-align: center;
+    font-weight: 400;
+}
+h2.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0; 
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px; 
+    height: 3px; 
+    background-color: var(--accent-color); 
+}
+
+/* --- HEADER MINIMALISTA (¡MODIFICADO!) --- */
+.header {
+    box-shadow: var(--shadow-subtle) !important; 
+    padding: 15px 5%; 
+    /* Usa el nuevo gris muy claro para reducir el brillo */
+    background-color: var(--bg-header-hero) !important; 
+}
+
+.logo {
+    font-size: 1.5em;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.nav-menu .nav-link {
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-left: 30px; 
+    position: relative;
+    transition: color 0.3s;
+}
+
+.nav-menu .nav-link:hover {
+    color: var(--accent-color);
+}
+
+/* --- HERO SECTION (LIMPIO, IMPACTANTE) (¡MODIFICADO!) --- */
+.hero {
+    /* Usa el nuevo gris muy claro para reducir el brillo */
+    background-color: var(--bg-header-hero);
+    padding: 120px 5%; 
+}
+
+.profile-pic {
+    width: 150px; 
+    height: 150px;
+    object-fit: cover;
+    border: 3px solid var(--accent-color); 
+    box-shadow: 0 0 15px rgba(26, 188, 156, 0.4); 
+}
+
+.hero h1 {
+    font-size: 4.5em; 
+    font-weight: 700; 
+    letter-spacing: -2px;
+}
+
+.subtitle-text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 1.3em;
+    color: var(--accent-color);
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.lead-text {
+    max-width: 650px;
+    margin: 0 auto 40px auto;
+}
+
+.cta-button {
+    padding: 12px 40px; 
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.btn-primary {
+    background-color: var(--accent-color) !important;
+    border-color: var(--accent-color) !important;
+}
+.btn-primary:hover {
+    background-color: var(--accent-dark) !important;
+    border-color: var(--accent-dark) !important;
+}
+
+/* --- EXPERIENCIA --- */
+.experience-card {
+    padding: 20px 0;
+}
+
+.job-title {
+    font-size: 1.5em;
+    margin-bottom: 5px;
+}
+.company-date {
+    color: var(--accent-color);
+    font-weight: 400;
+    font-size: 1em;
+    margin-bottom: 15px;
+}
+
+.job-separator {
+    border-top: 1px solid #ddd;
+    margin: 15px 0 35px 0;
+}
+
+.duties-list {
+    list-style: none;
+    padding-left: 0;
+}
+.duties-list li::before {
+    content: "•"; 
+    color: var(--accent-color); 
+    font-size: 1.2em; 
+    margin-right: 12px;
+}
+
+/* --- HABILIDADES --- */
+.skill-category-title {
+    font-size: 1.3em;
+    margin-bottom: 10px;
+    border-bottom: 2px solid var(--accent-color);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.skill-tags {
+    line-height: 2.2;
+    color: var(--text-color);
+}
+
+/* --- PROYECTOS (ESTILOS DE ACORDEÓN) --- */
+.project-card-item {
+    margin-bottom: 10px; 
+    border: 1px solid #e0e0e0;
+    border-radius: 6px !important;
+    overflow: hidden;
+    box-shadow: var(--shadow-subtle);
+    transition: box-shadow 0.3s;
+}
+
+.project-card-item:hover {
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+.accordion-button {
+    background-color: var(--bg-light) !important; 
+    color: var(--primary-color) !important;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600 !important;
+    font-size: 1.1em;
+    padding: 20px;
+    border-bottom: none !important;
+}
+
+/* Estilo para el botón de acordeón cuando está abierto */
+.accordion-button:not(.collapsed) {
+    background-color: #d8dcdc !important; 
+    border-left: 5px solid var(--accent-color); 
+}
+.accordion-button:focus {
+    box-shadow: 0 0 0 0.25rem rgba(26, 188, 156, 0.25);
+}
+
+/* Personalizar el icono de colapso */
+.accordion-button::after {
+    filter: invert(1);
+    color: var(--primary-color);
+    font-size: 0.8em;
+}
+
+/* Estilo del contenido desplegable */
+.project-content-body {
+    background-color: var(--bg-main); 
+    padding: 25px !important;
+    border-top: 1px solid #e0e0e0;
+}
+
+.project-badge {
+    background-color: var(--accent-color) !important;
+    font-weight: 500;
+    margin-left: 15px;
+    padding: 0.4em 0.8em;
+    font-size: 0.8em;
+}
+
+video {
+    width: 100%;
+    max-height: 300px;
+    object-fit: cover;
+}
+
+.project-link {
+    color: var(--primary-color) !important;
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 2px solid var(--accent-color);
+    padding-bottom: 2px;
+    transition: opacity 0.3s;
+}
+
+
+/* --- CONTACTO --- */
+.contact-area {
+    padding: 40px;
+    background-color: var(--bg-light-contrast);
+    border-radius: 8px;
+    box-shadow: var(--shadow-subtle);
+}
+
+.contact-text {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    font-size: 1.2em;
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.social-link {
+    color: var(--primary-color) !important;
+    font-size: 1.1em;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.social-link:hover {
+    color: var(--accent-color) !important;
+}
+
+/* --- FOOTER SIMPLE --- */
+footer {
+    background-color: var(--primary-color) !important; 
+    color: #ffffff !important;
+    padding: 30px 5%;
+    font-size: 0.9em;
+}
+
+/* ---------------------------------- */
+/* MEDIAS QUERIES (Ajuste para móvil) */
+/* ---------------------------------- */
+@media (max-width: 991px) { 
+    .hero h1 {
+        font-size: 3em;
+    }
+    h2.section-title {
+        font-size: 1.8em !important;
+        margin-bottom: 40px !important;
+    }
+    /* Estilos del menú móvil (toggle) */
+    #navMenu {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-in-out;
+        background-color: var(--bg-header-hero); /* Usamos el color de fondo del header */
+        border-top: 1px solid #eee;
+    }
+
+    #navMenu.open {
+        max-height: 500px; 
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    #navMenu .nav-link {
+        color: var(--primary-color);
+        padding: 12px 20px;
+        border-bottom: 1px solid #f0f0f0;
+        margin-left: 0;
+    }
+}
